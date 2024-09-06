@@ -12,6 +12,7 @@ use Illuminate\Filesystem\Filesystem;
 use ChrisReedIO\Inductor\Commands\InductorCommand;
 use ChrisReedIO\Inductor\Testing\TestsInductor;
 use Livewire\Features\SupportTesting\Testable;
+use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -58,7 +59,9 @@ class InductorServiceProvider extends PackageServiceProvider
         }
     }
 
-    public function packageRegistered(): void {}
+    public function packageRegistered(): void
+    {
+    }
 
     public function packageBooted(): void
     {
@@ -78,7 +81,7 @@ class InductorServiceProvider extends PackageServiceProvider
 
         // Handle Stubs
         if (app()->runningInConsole()) {
-            foreach (app(Filesystem::class)->files(__DIR__ . '/../stubs/') as $file) {
+            foreach (app(Filesystem::class)->files(__DIR__.'/../stubs/') as $file) {
                 $this->publishes([
                     $file->getRealPath() => base_path("stubs/inductor/{$file->getFilename()}"),
                 ], 'inductor-stubs');
@@ -87,6 +90,9 @@ class InductorServiceProvider extends PackageServiceProvider
 
         // Testing
         Testable::mixin(new TestsInductor);
+
+        // Livewire
+        Livewire::component('vue', \ChrisReedIO\Inductor\Livewire\VueApplication::class);
     }
 
     protected function getAssetPackageName(): ?string
@@ -101,8 +107,8 @@ class InductorServiceProvider extends PackageServiceProvider
     {
         return [
             // AlpineComponent::make('inductor', __DIR__ . '/../resources/dist/components/inductor.js'),
-            Css::make('inductor-styles', __DIR__ . '/../resources/dist/inductor.css'),
-            Js::make('inductor-scripts', __DIR__ . '/../resources/dist/inductor.js'),
+            // Css::make('inductor-styles', __DIR__.'/../resources/dist/inductor.css'),
+            // Js::make('inductor-scripts', __DIR__.'/../resources/dist/inductor.js'),
         ];
     }
 

@@ -1,0 +1,1 @@
+window.$inductor = window.$inductor || {}

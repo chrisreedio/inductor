@@ -4,6 +4,10 @@ namespace ChrisReedIO\Inductor;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Filament\Support\Facades\FilamentView;
+use Filament\View\PanelsRenderHook;
+use Illuminate\Contracts\View\View;
+use function view;
 
 class InductorPlugin implements Plugin
 {
@@ -14,7 +18,10 @@ class InductorPlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        //
+        FilamentView::registerRenderHook(
+            PanelsRenderHook::HEAD_END,
+            fn (): View => view('inductor::utility.head'),
+        );
     }
 
     public function boot(Panel $panel): void
