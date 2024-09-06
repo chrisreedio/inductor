@@ -19,7 +19,7 @@ class VueApplication extends Component
     public array $props = [];
 
     public ?array $page = [
-        'initial_key' => 'initial_value',
+        // 'initial_key' => 'initial_value',
     ];
 
     public function mount()
