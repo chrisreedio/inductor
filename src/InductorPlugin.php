@@ -7,6 +7,7 @@ use Filament\Panel;
 use Filament\Support\Facades\FilamentView;
 use Filament\View\PanelsRenderHook;
 use Illuminate\Contracts\View\View;
+
 use function view;
 
 class InductorPlugin implements Plugin
