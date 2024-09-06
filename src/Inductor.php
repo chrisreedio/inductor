@@ -4,12 +4,10 @@ namespace ChrisReedIO\Inductor;
 
 class Inductor
 {
-    public array $sharedData = [];
+    public static array $sharedData = [];
 
-    public function share($key, $value): self
+    public static function share($key, $value): void
     {
-        $this->sharedData[$key] = $value;
-
-        return $this;
+        self::$sharedData[$key] = $value;
     }
 }
