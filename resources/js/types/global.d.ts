@@ -3,6 +3,7 @@ import { AxiosInstance } from 'axios'
 declare global {
     interface Window {
         axios: AxiosInstance;
+        Livewire: any;
         $inductor: {
             loadSamples: () => Promise<void>;
             loadVueComponent: (

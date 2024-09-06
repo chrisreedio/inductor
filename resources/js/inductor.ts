@@ -17,12 +17,29 @@ $inductor.loadSamples = async function() {
         ...window.$inductor.components,
         ...samples,
     }
+}
 
+type Props = {
+    component_id: string,
+    props: Record<string, any>,
+    // props[key: string]: any,
 }
 
 $inductor.loadVueComponent = async function(name, props, divId) {
     console.log('Initializing Vue Component:', name)
     console.log('Props:', props)
+    const nakedDivId = divId.substring(1)
+    const componentId = document.getElementById(nakedDivId)?.parentElement?.getAttribute('wire:id')
+    if (!componentId) {
+        console.error('Component ID not found for:', nakedDivId)
+        return
+    }
+    const liveWireComponent = window.Livewire.all().find(
+        (component: any) => component.id === componentId,
+    )
+
+    // console.log('LiveWire Component:', liveWireComponent)
+
     const componentPathPrefix = `./components`
     const pageComponent = await resolvePageComponent<any>(
         `${componentPathPrefix}/${name}.vue`,
@@ -35,6 +52,7 @@ $inductor.loadVueComponent = async function(name, props, divId) {
     })
 
     // // Plugins
+    app.provide('wire', liveWireComponent ? liveWireComponent.$wire : null)
     // app.use(pinia);
     // app.use(PrimeVue, {
     //     theme: {

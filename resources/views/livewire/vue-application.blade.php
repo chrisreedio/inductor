@@ -6,9 +6,10 @@
     {{--</div>--}}
     {{--<h3>Props</h3>--}}
     {{--<pre>{{ print_r($props,true) }}</pre>--}}
-    {{--<hr>--}}
+    {{--<hr />--}}
     {{--<h3>Page</h3>--}}
     {{--<pre>{{ print_r($page, true) }}</pre>--}}
+    {{--<hr />--}}
     <div id="wirevue-{{ $component_id }}"
          data-wirevue
          data-wirevue-id="{{ $component_id }}"
