@@ -2,6 +2,7 @@
 
 namespace ChrisReedIO\Inductor\Livewire;
 
+use ChrisReedIO\Inductor\Inductor;
 use Illuminate\Support\Str;
 use Livewire\Component;
 
@@ -19,8 +20,9 @@ class VueApplication extends Component
         return view('inductor::livewire.vue-application', [
             'component_id' => Str::random(8),
             'page' => [
-                'user' => auth()->user(),
-                'php_version' => phpversion(),
+                // 'user' => auth()->user(),
+                // 'php_version' => phpversion(),
+                ...Inductor::getSharedData(),
             ],
         ]);
     }
