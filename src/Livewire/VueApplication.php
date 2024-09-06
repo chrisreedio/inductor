@@ -4,6 +4,7 @@ namespace ChrisReedIO\Inductor\Livewire;
 
 use Illuminate\Support\Str;
 use Livewire\Component;
+
 use function auth;
 use function phpversion;
 
