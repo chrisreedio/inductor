@@ -45,6 +45,6 @@ const defaultOptions = {
 
 compile({
     ...defaultOptions,
-    entryPoints: ['./resources/js/index.js'],
+    entryPoints: ['./resources/js/inductor.ts'],
     outfile: './resources/dist/inductor.js',
 })
