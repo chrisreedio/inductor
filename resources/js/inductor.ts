@@ -11,7 +11,7 @@ $inductor.loadSamples = async function() {
 
     // window.$inductor.components.push(import.meta.glob('./Components/**/*.vue'))
     const samples = import.meta.glob('./Components/**/*.vue')
-    console.log('Inductor Samples Initialized:', samples)
+    console.log('Inductor Sample Vue Components Imported:', samples)
     // @ts-ignore
     window.$inductor.components = {
         ...window.$inductor.components,
@@ -22,7 +22,7 @@ $inductor.loadSamples = async function() {
 
 $inductor.loadVueComponent = async function(name, props, divId) {
     console.log('Initializing Vue Component:', name)
-    console.log('Props:', props)
+    // console.log('Props:', props)
     const componentPathPrefix = `./Components`
     const pageComponent = await resolvePageComponent<any>(
         `${componentPathPrefix}/${name}.vue`,
@@ -48,10 +48,12 @@ $inductor.loadVueComponent = async function(name, props, divId) {
 
 $inductor.loadSamples().then(() => {
     // console.log('Inductor Samples Loaded:', window.$inductor.components)
+    console.log('Inductor Initialized!')
 })
 
 $inductor.addComponentPath = function(newComponents: Record<string, Promise<any>>) {
-    console.log('Adding ' + Object.keys(newComponents).length + ' new Vue components to inductor...')
+    console.log('Adding ' + Object.keys(newComponents).length + ' new application level Vue component(s) to inductor...')
+    console.log('New Components:', newComponents)
     window.$inductor.components = window.$inductor.components || []
     window.$inductor.components = {
         ...window.$inductor.components,
