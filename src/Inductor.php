@@ -1,5 +1,5 @@
 <?php
 
-namespace Inductor\Inductor;
+namespace ChrisReedIO\Inductor;
 
 class Inductor {}

@@ -1,6 +1,6 @@
 <?php
 
-namespace Inductor\Inductor\Testing;
+namespace ChrisReedIO\Inductor\Testing;
 
 use Livewire\Features\SupportTesting\Testable;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Inductor\Inductor\Database\Factories;
+namespace ChrisReedIO\Inductor\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

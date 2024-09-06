@@ -1,6 +1,6 @@
 <?php
 
-namespace Inductor\Inductor\Commands;
+namespace ChrisReedIO\Inductor\Commands;
 
 use Illuminate\Console\Command;
 

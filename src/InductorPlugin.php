@@ -1,6 +1,6 @@
 <?php
 
-namespace Inductor\Inductor;
+namespace ChrisReedIO\Inductor;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;

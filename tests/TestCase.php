@@ -1,6 +1,6 @@
 <?php
 
-namespace Inductor\Inductor\Tests;
+namespace ChrisReedIO\Inductor\Tests;
 
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
@@ -13,7 +13,7 @@ use Filament\Support\SupportServiceProvider;
 use Filament\Tables\TablesServiceProvider;
 use Filament\Widgets\WidgetsServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Inductor\Inductor\InductorServiceProvider;
+use ChrisReedIO\Inductor\InductorServiceProvider;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
@@ -25,7 +25,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Inductor\\Inductor\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn (string $modelName) => 'ChrisReedIO\\Inductor\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 
