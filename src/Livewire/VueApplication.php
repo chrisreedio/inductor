@@ -18,27 +18,23 @@ class VueApplication extends Component
 
     public array $props = [];
 
-    public ?array $page = [
-        // 'initial_key' => 'initial_value',
-    ];
+    public ?array $page = [];
 
     public function mount()
     {
         $this->component_id = Str::random(8);
+        $this->page = Inductor::getSharedData();
         // $this->component = $component;
         // $this->props = $props;
-        $sharedData = Inductor::getSharedData();
-        $this->page['php_version'] = phpversion();
-        array_walk($sharedData, function ($value, $key) {
-            $this->page[$key] = $value;
-        });
+        // $sharedData = Inductor::getSharedData();
+        // $this->page['php_version'] = phpversion();
+        // array_walk($sharedData, function ($value, $key) {
+        //     $this->page[$key] = $value;
+        // });
     }
 
     public function render()
     {
-        return view('inductor::livewire.vue-application')
-            ->with([
-                'page' => $this->page,
-            ]);
+        return view('inductor::livewire.vue-application');
     }
 }
