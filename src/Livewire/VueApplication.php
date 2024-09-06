@@ -7,7 +7,6 @@ use Illuminate\Support\Str;
 use Livewire\Component;
 
 use function array_walk;
-use function auth;
 use function phpversion;
 
 class VueApplication extends Component
