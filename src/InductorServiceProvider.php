@@ -2,6 +2,8 @@
 
 namespace ChrisReedIO\Inductor;
 
+use ChrisReedIO\Inductor\Commands\InductorCommand;
+use ChrisReedIO\Inductor\Testing\TestsInductor;
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
@@ -9,8 +11,6 @@ use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Illuminate\Filesystem\Filesystem;
-use ChrisReedIO\Inductor\Commands\InductorCommand;
-use ChrisReedIO\Inductor\Testing\TestsInductor;
 use Livewire\Features\SupportTesting\Testable;
 use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
