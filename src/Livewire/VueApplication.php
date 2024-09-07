@@ -4,6 +4,7 @@ namespace ChrisReedIO\Inductor\Livewire;
 
 use ChrisReedIO\Inductor\Inductor;
 use Illuminate\Support\Str;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 use function array_walk;
@@ -30,6 +31,12 @@ class VueApplication extends Component
         // array_walk($sharedData, function ($value, $key) {
         //     $this->page[$key] = $value;
         // });
+    }
+
+    #[On('openModal')]
+    public function openModal($entry): void
+    {
+        $this->mountTableAction('edit', $entry);
     }
 
     public function render()
