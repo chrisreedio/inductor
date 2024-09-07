@@ -53,7 +53,7 @@ const InductorObject: Inductor = {
 
         // Mount the configured plugins
         this.plugins.forEach(({ plugin, options }) => {
-            console.log("Mounting Plugin:", plugin);
+            // console.log("Mounting Plugin:", plugin);
             app.use(plugin, options);
         });
 
@@ -71,7 +71,7 @@ const InductorObject: Inductor = {
 
     // Method to add new plugins to the inductor's plugins
     addPlugin(plugin: any, options = {}) {
-        console.log("Adding Plugin:", plugin);
+        // console.log("Adding Plugin:", plugin);
         this.plugins.push({ plugin, options });
     },
 }
