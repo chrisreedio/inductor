@@ -26,8 +26,8 @@ const InductorObject: Inductor = {
 
     // Method to load a specific Vue component dynamically
     async loadVueComponent(name: string, props: any[], divId: string) {
-        console.log('Initializing Vue Component!!!:', name)
-        console.log('Props:', props)
+        // console.log('Initializing Vue Component:', name)
+        // console.log('Props:', props)
 
         const nakedDivId = divId.substring(1)
         const componentId = document.getElementById(nakedDivId)?.parentElement?.getAttribute('wire:id')
