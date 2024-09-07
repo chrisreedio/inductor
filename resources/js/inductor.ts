@@ -52,10 +52,10 @@ const InductorObject: Inductor = {
         app.provide('wire', liveWireComponent ? liveWireComponent.$wire : null)
 
         // Mount the configured plugins
-        this.plugins.forEach((plugin) => {
-            console.log('Mounting Plugin:', plugin)
-            app.use(plugin)
-        })
+        this.plugins.forEach(({ plugin, options }) => {
+            console.log("Mounting Plugin:", plugin);
+            app.use(plugin, options);
+        });
 
         app.mount(divId)
     },
@@ -70,9 +70,9 @@ const InductorObject: Inductor = {
     },
 
     // Method to add new plugins to the inductor's plugins
-    addPlugin(plugin: any) {
-        console.log('Adding Plugin:', plugin)
-        this.plugins.push(plugin)
+    addPlugin(plugin: any, options = {}) {
+        console.log("Adding Plugin:", plugin);
+        this.plugins.push({ plugin, options });
     },
 }
 
